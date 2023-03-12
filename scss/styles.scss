@@ -1,5 +1,7 @@
 $primary-background: #232323;
-$lighter-background: #292a2d;
+// $lighter-background: #292a2d;
+$lighter-background: #232323;
+$darker-background: #1e1e20;
 $gray-background: #d3d3d3;
 $popup-background: #404040;
 $hover: #424242;
@@ -9,6 +11,8 @@ $dark-text-color: #232323;
 $scrollbar-background: #474747;
 $scrollbar-hover: #888888;
 $scrollbar-color: #646464;
+
+$gray-text: #707070;
 
 /*
  * Color styles
@@ -24,6 +28,7 @@ $scrollbar-color: #646464;
 .groupme-list,
 .gm-loading-overlay,
 #app-loading,
+#tray,
 #tray .tray-list,
 .modal-content,
 .modal-body,
@@ -40,13 +45,9 @@ body,
 .poll-create .layout,
 .poll-list,
 .poll-list .poll.poll-listing,
-.form-footer,
-.pinned-message,
-.highlight .chat-messages .popular-message .message,
-.expansion-header,
-.list-item,
-.settings-header {
-  background-color: $primary-background !important;
+.form-footer {
+  // background-color: $primary-background !important;
+  background-color: $lighter-background !important;
 }
 
 .chat-menu,
@@ -56,22 +57,27 @@ body,
 .groupme-list .list-item:hover,
 .groupme-list .list-item.active,
 .list-item.selected,
+.list-item,
 .logo:hover,
 .member:hover,
+.image-editor,
 .calendar-event .info-section,
 .calendar-event.event-attachment,
-.calendar-event.event-attachment .calendar-footer,
-.user-settings .setting-block,
-.list-item.active button,
-.list-item:hover button {
+.calendar-event.event-attachment .calendar-footer {
   background-color: $lighter-background !important;
 }
 
 .list-search input {
-  background-color: $gray-background !important;
+  background-color: $lighter-background !important;
 }
 
-.groupme-list .list-item.active:hover {
+.groupme-list .list-item.active:hover,
+.list-item.active button,
+.list-item:hover button,
+.list-item:hover .list-heading,
+.list-item.active .list-heading,
+.list-item:hover .chat-name,
+.list-item.active .chat-name {
   background-color: $hover !important;
 }
 
@@ -92,6 +98,8 @@ body,
 .mention,
 .user-settings,
 .user-settings h4,
+.setting-block,
+.settings-header,
 .chat-menu .list span,
 .member span,
 .modal-title,
@@ -130,22 +138,40 @@ body,
 .calendar-event .info-section .biline,
 .rsvp span,
 .modal-body .content,
-.dropdown-menu > li > a,
-.poll-create .left-fields .optionAddBtn .btn-default,
-.sender-name,
-.dropdown-toggle svg,
-.pinned-message svg,
-.chat-messages > div > div,
-.list-title span,
-.user-settings .setting-block .settings-label,
-.settings-header h1,
-.groupme-list .list-menu,
-.dropdown-menu button span,
-.welcome h4,
-.main-chat-name,
-.section-header,
-.reply .reply-message .name {
+.dropdown-menu>li>a,
+.poll-create .left-fields .optionAddBtn .btn-default {
+  // background-color: $lighter-background !important;
   color: $text-color !important;
+}
+
+.empty_group h3 {
+  visibility: hidden !important;
+}
+
+.gifs,
+.images,
+.videos {
+  background-color: $lighter-background !important;
+  color: $text-color !important;
+}
+
+.accessible-focus {
+  background-color: $lighter-background !important;
+  color: $text-color !important;
+  accent-color: $text-color !important;
+}
+
+.media-type {
+  background-color: $lighter-background !important;
+}
+
+.composer-wrapper .emoji-wysiwyg-editor {
+  background-color: $lighter-background !important;
+}
+
+.modal-dialog,
+.modal-content {
+  background: rgba(0, 0, 0, .1) !important;
 }
 
 .photo-upload .buttonText,
@@ -167,6 +193,29 @@ body,
 .rsvp .options span,
 .view-event span {
   color: $dark-text-color !important;
+}
+
+.reply .name {
+  color: $text-color !important;
+}
+
+.pasted {
+  background-color: $darker-background;
+}
+
+.pasted .text {
+  color: $gray-text !important;
+}
+
+
+.pasted .text:before {
+  content: ">";
+}
+
+.message-text.pasted {
+  border-left: solid !important;
+  color: $gray-background;
+  padding-left: .5em;
 }
 
 /*
@@ -196,12 +245,7 @@ body,
   border-top: 6px solid $primary-background !important;
 }
 
-.pages.has-server-pages
-  .server-pages
-  .page:first-child
-  .message:first-child
-  .likes-container
-  .pop-over:after {
+.pages.has-server-pages .server-pages .page:first-child .message:first-child .likes-container .pop-over:after {
   border-left: 6px solid $popup-background !important;
 }
 
@@ -217,8 +261,7 @@ body,
 }
 
 .caret,
-.skype-button-img,
-.skype-button-container {
+.skype-button-img {
   visibility: hidden !important;
 }
 
@@ -240,16 +283,16 @@ body,
   right: 30px !important;
 }
 
-/*
- * Message styling fixes
- */
-.chat-messages .message .message-body,
+// /*
+//  * Message styling fixes
+//  */
+// .chat-messages .message .message-body,
 // .chat-messages .message .message-header .nickname,
-.chat-messages .message .failed,
-.chat-messages .message .message-sent,
-.chat-messages .message .message-read {
-  margin-left: 70px !important;
-}
+// .chat-messages .message .failed,
+// .chat-messages .message .message-sent,
+// .chat-messages .message .message-read {
+//   margin-left: 70px !important;
+// }
 
 .chat-messages .message .message-header .avatar,
 .chat-messages .message.system .message-header {
@@ -315,57 +358,4 @@ body,
 
 ::-webkit-scrollbar-corner {
   background: $scrollbar-background !important;
-}
-
-/*
- * Rainbow
- */
-
-.rainbow-text * {
-  background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent !important;
-  animation: rainbow-text 6s ease-in-out infinite;
-  background-size: 400% 100%;
-}
-
-@keyframes rainbow-text {
-  0%,
-  100% {
-    background-position: 0 0;
-  }
-
-  50% {
-    background-position: 100% 0;
-  }
-}
-
-
-.pinned-message .text {
-  height: auto !important;
-}
-
-.expansion-header {
-  border-bottom: 1px solid !important;
-}
-
-.expansion-header span {
-  color: $text-color !important;
-}
-
-.list-item.chat-list {
-  max-width: 100% !important;
-}
-
-#app {
-  opacity: 1 !important;
-}
-
-#tray .tray-header {
-  margin-top: 0 !important;
-}
-
-#tray .tray-header .actions .new-chat .dropdown-toggle {
-  background: none;
 }
