@@ -1,5 +1,5 @@
 ## Motivation
-The previous GroupMe Web dark theme that I was using broke due to an update. [akump's Chrome extension] (https://github.com/akump/GroupMeDarkTheme) seemed like a good replacement but there were two problems:
+The previous GroupMe Web dark theme that I was using broke due to an update. [akump's Chrome extension](https://github.com/akump/GroupMeDarkTheme) seemed like a good replacement but there were two problems:
 1. I use Firefox
 2. The update was so recent his extension hadn't caught up to it either
 
