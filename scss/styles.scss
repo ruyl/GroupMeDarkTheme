@@ -144,8 +144,34 @@ body,
   color: $text-color !important;
 }
 
+// fix group settings buttons and sharing panel
+.btn-secondary,
+.btn-danger {
+  background-color: $darker-background;
+}
+
+.qr-form {
+  color: $text-color !important;
+  background-color: $lighter-background !important;
+}
+
+// fix poll creation panel
+.form-control,
+.btn-default {
+  background-color: $popup-background !important;
+  color: $text-color !important;
+}
+
+// fix media sharing //
 .empty_group h3 {
   visibility: hidden !important;
+}
+
+
+// fix contact list things
+.content-card,
+.content-card h3 {
+  color: $text-color;
 }
 
 .gifs,
@@ -173,6 +199,8 @@ body,
 .modal-content {
   background: rgba(0, 0, 0, .1) !important;
 }
+
+////
 
 .photo-upload .buttonText,
 .results span,

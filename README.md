@@ -23,6 +23,8 @@ To compile the scss file into a css file usable in userstyle engines and the lik
    2. Contacts
    3. Archives
    4. Campus Connect
+3. Transparency on certain pop-ups (e.g. group creation, new DM)
+4. Certain colors for highlighted items
 
 ## TODO
 
